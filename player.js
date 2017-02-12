@@ -192,6 +192,7 @@ P.player = (function() {
         titleCallback('');
       });
     }
+
   }
 
   function showError(e) {

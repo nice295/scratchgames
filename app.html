@@ -5,7 +5,20 @@
 <meta name=apple-mobile-web-app-status-bar-style content=black>
 <title>phosphorus</title>
 <link rel=stylesheet href=app.css>
+
 <div class=player></div>
+
+<div class=controls>
+  <span class=flag></span>
+</div>
+
+<div class=buttons>
+  <span ><img class=up src="images/up.svg"/></span>
+  <span ><img class=down src="images/down.svg"/></span>
+  <span ><img class=left src="images/left.svg"/></span>
+  <span ><img class=right src="images/right.svg"/></span>
+</div>
+
 <div class=splash>
 <div>
   <h1>Loading...</h1>
@@ -30,7 +43,7 @@
   'use strict';
 
   var stage;
-  var projectId = 17088932;
+  var projectId = 142508032;
   var projectTitle = '';
   var turbo = false;
   var fullScreen = true;
@@ -59,7 +72,64 @@
   var bugLink = document.querySelector('#bug-link');
   var player = document.querySelector('.player');
 
+  var flag = document.querySelector('.flag'); //khlee
+  flag.addEventListener('click', flagClick);
+
+  var left = document.querySelector('.left'); //khlee
+  left.addEventListener('click', leftClick);
+
+  var right = document.querySelector('.right'); //khlee
+  right.addEventListener('click', rightClick);
+
+  var up = document.querySelector('.up'); //khlee
+  up.addEventListener('click', upClick);
+
+  var down = document.querySelector('.down'); //khlee
+  down.addEventListener('click', downClick);
+
+
   var stage;
+
+  //khlee
+  function flagClick(e) {
+    stage.start();
+    stage.stopAll();
+    stage.triggerGreenFlag();
+    stage.focus();
+
+  }
+
+  /*
+    space: 32,
+    'left arrow': 37,
+    'up arrow': 38,
+    'right arrow': 39,
+    'down arrow': 40,
+  */
+
+  function upClick(e) {
+    var c = 38;
+    stage.trigger('whenKeyPressed', c);
+    e.preventDefault();
+  }
+
+  function downClick(e) {
+    var c = 40;
+    stage.trigger('whenKeyPressed', c);
+    e.preventDefault();
+  }
+
+  function leftClick(e) {
+    var c = 37;
+    stage.trigger('whenKeyPressed', c);
+    e.preventDefault();
+  }
+
+  function rightClick(e) {
+    var c = 39;
+    stage.trigger('whenKeyPressed', c);
+    e.preventDefault();
+  }
 
   function layout() {
     if (!stage) return;

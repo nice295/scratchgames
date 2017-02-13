@@ -77,7 +77,13 @@
 
   var left = document.querySelector('.left'); //khlee
   left.addEventListener('click', leftClick);
-
+  
+  document.getElementById("left").addEventListener("click", function(){
+    var c = 37;
+    stage.trigger('whenKeyPressed', c);
+    e.preventDefault();
+  });
+  
   var right = document.querySelector('.right'); //khlee
   right.addEventListener('click', rightClick);
 

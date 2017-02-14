@@ -92,7 +92,6 @@ p {
 
 .buttons .up {
   position: absolute;
-  background-image: url(images/up.svg);
   
   left: 32px;
   bottom: 32px;

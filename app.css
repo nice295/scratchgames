@@ -84,13 +84,15 @@ p {
   background-position: -128px 0;
 }
 
-.buttons {
+.arrows {
   position: absolute;
   bottom: 32px;
   left: 32px;
+
+  width: 100%;
 }
 
-.buttons .up {
+.arrows .up {
   position: absolute;
   
   left: 32px;
@@ -100,7 +102,7 @@ p {
   height: 32px;
 }
 
-.buttons .down {
+.arrows .down {
   position: absolute;
 
   left: 32px;
@@ -110,7 +112,7 @@ p {
   height: 32px;
 }
 
-.buttons .left {
+.arrows .left {
     position: absolute;
     bottom: 0px;
 
@@ -118,7 +120,7 @@ p {
     height: 32px;
 }
 
-.buttons .right {
+.arrows .right {
   position: absolute;
 
   left: 64px;

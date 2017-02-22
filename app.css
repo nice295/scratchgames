@@ -52,82 +52,58 @@ p {
   color: #000; //#fff;
 }
 
-.controls {
-  position: relative;
-  height: 32px;
-}
-.controls span,
-.project-link {
-  width: 32px;
-  height: 32px;
-  float: right;
-  cursor: pointer;
-  text-align: center;
-  opacity: .4;
-  background-image: url(icons.svg);
-  text-decoration: none;
-}
-.controls .flag {
-  background-position: 0 0;
-}
-.controls .stop {
-  background-position: -96px 0;
-}
-.controls .pause {
-  background-position: -32px 0;
-}
-.controls .play {
-  background-position: -64px 0;
-}
-.controls .full-screen {
-  float: left;
-  background-position: -128px 0;
+.arrows {
+  position: absolute;
+  height: 100%;
+  width: 100%
 }
 
-.restart {
+.arrows .restart {
   position: absolute;
   
-  left: 32px;
-  top: 32px;
+  right: 8px;
+  top: 8px;
 }
 
 .arrows .up {
   position: absolute;
   
   left: 64px;
-  bottom: 64px;
+  bottom: 72px;
 }
 
 .arrows .down {
   position: absolute;
 
   left: 64px;
-  bottom: 0px;
+  bottom: 8px;
 }
 
 .arrows .left {
   position: absolute;
-  bottom: 32px;
+
+  left: 8px;
+  bottom: 40px;
 }
 
 .arrows .right {
   position: absolute;
 
-  left: 128px;
-  bottom: 32px;
+  left: 120px;
+  bottom: 40px;
 }
 
 .arrows .btn-a {
   position: absolute;
-  right: 128px;
-  bottom: 32px;
+  right: 120px;
+  bottom: 8px;
 }
 
 .arrows .btn-b {
   position: absolute;
 
-  right: 32px;
-  bottom: 32px;
+  right: 8px;
+  bottom: 8px;
 }
 
 

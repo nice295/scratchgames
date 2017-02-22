@@ -12,13 +12,7 @@
 
 <div class=player></div>
 
-<div class=controls>
-  <!--<span class=flag></span>-->
-</div>
-
 <div class=arrows>
-
-
   <button class="up mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
     <i class="material-icons">keyboard_arrow_up</i>
   </button>
@@ -47,7 +41,7 @@
     B
   </button> 
 
-  <button class="retart flag mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+  <button class="restart flag mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
     RESTART
   </button> 
 
@@ -106,8 +100,8 @@
   var bugLink = document.querySelector('#bug-link');
   var player = document.querySelector('.player');
 
-  var flag = document.querySelector('.flag'); //khlee
-  flag.addEventListener('click', flagClick);
+  var restart = document.querySelector('.restart'); //khlee
+  restart.addEventListener('click', restartClick);
 
   var left = document.querySelector('.left'); //khlee
   left.addEventListener('click', leftClick);
@@ -130,7 +124,7 @@
   var stage;
 
   //khlee
-  function flagClick(e) {
+  function restartClick(e) {
     stage.start();
     stage.stopAll();
     stage.triggerGreenFlag();

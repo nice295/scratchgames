@@ -13,10 +13,12 @@
 <div class=player></div>
 
 <div class=controls>
-  <span class=flag></span>
+  <!--<span class=flag></span>-->
 </div>
 
 <div class=arrows>
+
+
   <button class="up mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
     <i class="material-icons">keyboard_arrow_up</i>
   </button>
@@ -39,10 +41,14 @@
   </button> 
   -->
   <button class="btn-a mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-    SPACE
+    A
   </button>
   <button class="btn-b mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-    ENTER
+    B
+  </button> 
+
+  <button class="retart flag mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+    RESTART
   </button> 
 
 </div>
@@ -165,13 +171,13 @@
   }
 
   function btnAClick(e) {
-    var c = 32;
+    var c = 65;
     stage.trigger('whenKeyPressed', c);
     e.preventDefault();
   }
 
   function btnBClick(e) {
-    var c = 13;
+    var c = 66;
     stage.trigger('whenKeyPressed', c);
     e.preventDefault();
   }

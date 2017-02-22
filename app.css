@@ -95,7 +95,8 @@ p {
 
 .arrows .btn-a {
   position: absolute;
-  right: 96px;
+
+  right: 80px;
   bottom: 8px;
 }
 

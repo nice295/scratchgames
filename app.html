@@ -7,7 +7,7 @@
 <link rel=stylesheet href=app.css>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.green-indigo.min.css">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-blue.min.css" />
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
 <div class=player></div>
@@ -16,25 +16,35 @@
   <span class=flag></span>
 </div>
 
-<div class=buttons>
-  <span ><img class=up src="images/up.svg"/></span>
-  <span ><img class=down src="images/down.svg"/></span>
-  <span ><img id='left' class=left src="images/left.svg"/></span>
-  <span ><img class=right src="images/right.svg"/></span>
-  
-  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button-colored mdl-js-ripple-effect">
+<div class=arrows>
+  <button class="up mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
     <i class="material-icons">keyboard_arrow_up</i>
   </button>
-  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+  <button class="down mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
     <i class="material-icons">keyboard_arrow_down</i>
   </button>
-  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+  <button class="left mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
    <i class="material-icons">keyboard_arrow_left</i>
   </button>
-  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+  <button class="right mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
     <i class="material-icons">keyboard_arrow_right</i>
   </button>    
   
+  <!--
+  <button class="btn-a mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">
+    SPACE
+  </button>
+  <button class="btn-b mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+    ENTER
+  </button> 
+  -->
+  <button class="btn-a mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+    SPACE
+  </button>
+  <button class="btn-b mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+    ENTER
+  </button> 
+
 </div>
 
 <div class=splash>
@@ -96,11 +106,6 @@
   var left = document.querySelector('.left'); //khlee
   left.addEventListener('click', leftClick);
   
-  document.getElementById("left").addEventListener("click", function(){
-    var c = 37;
-    stage.trigger('whenKeyPressed', c);
-  });
-  
   var right = document.querySelector('.right'); //khlee
   right.addEventListener('click', rightClick);
 
@@ -110,6 +115,11 @@
   var down = document.querySelector('.down'); //khlee
   down.addEventListener('click', downClick);
 
+  var btn_a = document.querySelector('.btn-a'); //khlee
+  btn_a.addEventListener('click', btnAClick);
+
+  var btn_b = document.querySelector('.btn-b'); //khlee
+  btn_b.addEventListener('click', btnBClick);
 
   var stage;
 
@@ -150,6 +160,18 @@
 
   function rightClick(e) {
     var c = 39;
+    stage.trigger('whenKeyPressed', c);
+    e.preventDefault();
+  }
+
+  function btnAClick(e) {
+    var c = 32;
+    stage.trigger('whenKeyPressed', c);
+    e.preventDefault();
+  }
+
+  function btnBClick(e) {
+    var c = 13;
     stage.trigger('whenKeyPressed', c);
     e.preventDefault();
   }

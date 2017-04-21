@@ -10,6 +10,20 @@
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-blue.min.css" />
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
+<script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyABBZ7pIVZz1DqMen_4EB2hclMEf1-Xbao",
+    authDomain: "scratchgames-86531.firebaseapp.com",
+    databaseURL: "https://scratchgames-86531.firebaseio.com",
+    projectId: "scratchgames-86531",
+    storageBucket: "scratchgames-86531.appspot.com",
+    messagingSenderId: "307395719767"
+  };
+  firebase.initializeApp(config);
+</script>
+
 <div class=player></div>
 
 <div class=arrows>
@@ -181,8 +195,20 @@
 
   function showError(e) {
     error.style.display = 'table';
-    bugLink.href = 'https://github.com/nice295/scratchgames/issues/new?title=' + encodeURIComponent(projectTitle || '') + '&body=' + encodeURIComponent('\n\n\nhttp://scratch.mit.edu/projects/' + projectId + '\nhttp://nice295.github.io/scratchgames#' + projectId + (e.stack ? '\n\n```\n' + e.stack + '\n```' : ''));
-    console.error(e.stack);
+    //bugLink.href = 'https://github.com/nice295/scratchgames/issues/new?title=' + encodeURIComponent(projectTitle || '') + '&body=' + encodeURIComponent('\n\n\nhttp://scratch.mit.edu/projects/' + projectId + '\nhttp://nice295.github.io/scratchgames#' + projectId + (e.stack ? '\n\n```\n' + e.stack + '\n```' : ''));
+    //console.error(e.stack);
+
+    console.log("Starting removing...");
+    // Delete database
+    var errorChild = firebase.database().ref('showroom/'+projectId);
+    errorChild.remove()
+      .then(function() {
+      console.log("Remove succeeded.")
+    })
+      .catch(function(error) {
+      console.log("Remove failed: " + error.message)
+    });
+
   }
 
   window.addEventListener('resize', layout);

@@ -67,6 +67,14 @@ p {
   top: 8px;
 }
 
+/* 05057 */
+.arrows .turboMode {
+  position: absolute;
+  
+  left: 8px;
+  top: 8px;
+}
+
 .arrows .up {
   position: absolute;
   

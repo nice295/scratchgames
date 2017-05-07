@@ -51,6 +51,11 @@
     RESTART
   </button> 
 
+  <!-- 0507 -->
+  <button class="turboMode flag mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+    TURBO MODE
+  </button> 
+
 </div>
 
 <div class=splash>
@@ -109,6 +114,9 @@
   var restart = document.querySelector('.restart'); //khlee
   restart.addEventListener('click', restartClick);
 
+  var turboMode = document.querySelector('.turboMode'); //khlee-0507
+  turboMode.addEventListener('click', turboModeClick);
+
   var left = document.querySelector('.left'); //khlee
   left.addEventListener('click', leftClick);
   
@@ -136,8 +144,19 @@
     stage.triggerGreenFlag();
     stage.focus();
 
+    stage.isTurbo = false;
   }
 
+  //khlee-0507
+  function turboModeClick(e) {
+    stage.start();
+    stage.stopAll();
+    stage.triggerGreenFlag();
+    stage.focus();
+
+    stage.isTurbo = true;
+  }
+  
   /*
     space: 32,
     'left arrow': 37,
@@ -207,6 +226,16 @@
     })
       .catch(function(error) {
       console.log("Remove failed: " + error.message)
+    });
+
+    // Delete database Extended 0507
+    var errorChild = firebase.database().ref('showroom-ext/'+projectId);
+    errorChild.remove()
+      .then(function() {
+      console.log("showroom-ext: Remove succeeded.")
+    })
+      .catch(function(error) {
+      console.log("showroom-ext: Remove failed: " + error.message)
     });
 
   }

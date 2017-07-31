@@ -40,6 +40,10 @@
     <i class="material-icons">keyboard_arrow_right</i>
   </button>    
   
+  <button class="btn-space mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+    SPACE
+  </button>
+
   <button class="btn-a mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
     A
   </button>
@@ -135,6 +139,9 @@
   var btn_b = document.querySelector('.btn-b'); //khlee
   btn_b.addEventListener('click', btnBClick);
 
+  var btn_space = document.querySelector('.btn-space'); //khlee
+  btn_space.addEventListener('click', btnSpaceClick);
+
   var stage;
 
   //khlee
@@ -197,6 +204,12 @@
 
   function btnBClick(e) {
     var c = 66;
+    stage.trigger('whenKeyPressed', c);
+    e.preventDefault();
+  }
+
+  function btnSpaceClick(e) {
+    var c = 32;
     stage.trigger('whenKeyPressed', c);
     e.preventDefault();
   }

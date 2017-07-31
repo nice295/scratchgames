@@ -117,6 +117,12 @@ p {
   bottom: 8px;
 }
 
+.arrows .btn-space {
+  position: absolute;
+
+  right: 8px;
+  bottom: 80px;
+}
 
 .controls span:active,
 .project-link:active {
